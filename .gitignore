@@ -3,6 +3,3 @@
 
 # DB
 *.log
-
-# Server
-nest/node_modules/*
