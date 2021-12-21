@@ -1,4 +1,4 @@
-import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions';
+import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions'
 
 const options: MysqlConnectionOptions = {
   type: 'mysql',
@@ -16,6 +16,6 @@ const options: MysqlConnectionOptions = {
   cli: {
     migrationsDir: 'migration',
   },
-};
+}
 
-export default options;
+export default options

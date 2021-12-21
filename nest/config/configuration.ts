@@ -5,4 +5,4 @@ export default () => ({
     pass: process.env.MYSQL_PASSWORD,
     port: process.env.DB_PORT,
   },
-});
+})
