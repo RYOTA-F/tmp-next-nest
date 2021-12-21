@@ -5,7 +5,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TestModule } from './test/test.module';
 import options from './ormconfig';
-import configuration from 'config/configuration';
+import configuration from '../config/configuration';
+
 @Module({
   imports: [
     TypeOrmModule.forRoot(options),
