@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+  server:
+    container_name: tmp_nest_server
+    build: ./docker/nest
+    tty: true
+    ports:
+      - 3000:3000
+    volumes:
+      - "./nest:/nest"
+    depends_on:
+      - db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DB_PORT: ${MYSQL_DB_PORT}
+    command: yarn start:dev
+
+  db:
+    container_name: tmp_nest_db
+    image: mysql:8.0
+    volumes:
+      - nest_data:/var/lib/mysql
+      - ./db/logs:/var/log/mysql
+      - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./db:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - TZ=${TZ}
+    ports:
+      - ${MYSQL_DB_PORT}:3306
+
+networks:
+  default:
+
+volumes:
+  nest_data:
