@@ -11,6 +11,7 @@ import configuration from '../config/configuration'
   imports: [
     TypeOrmModule.forRoot(options),
     ConfigModule.forRoot({
+      isGlobal: true,
       load: [configuration],
     }),
     TestModule,

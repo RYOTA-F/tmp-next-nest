@@ -11,6 +11,12 @@ services:
       - "./nest:/nest"
     depends_on:
       - db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DB_PORT: ${MYSQL_DB_PORT}
     command: yarn start:dev
 
   db:
@@ -28,7 +34,7 @@ services:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - TZ=${TZ}
     ports:
-      - ${DB_PORT}:3306
+      - ${MYSQL_DB_PORT}:3306
 
 networks:
   default:
