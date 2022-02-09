@@ -9,10 +9,12 @@ const options: MysqlConnectionOptions = {
   username: configuration.database.user,
   password: configuration.database.pass,
   database: configuration.database.name,
+  synchronize: false,
+  logging: false,
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
-  migrations: ['migration/*.migration{.ts,.js}'],
+  migrations: [__dirname + '/migration/*.migration{.ts,.js}'],
   cli: {
-    migrationsDir: 'migration',
+    migrationsDir: __dirname + '/migration',
   },
 }
 
