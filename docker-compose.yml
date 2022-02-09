@@ -1,8 +1,8 @@
 version: "3"
 
 services:
-  server:
-    container_name: tmp_nest_server
+  api:
+    container_name: tmp_nest
     build: ./docker/nest
     tty: true
     ports:
@@ -20,7 +20,7 @@ services:
     command: yarn start:dev
 
   db:
-    container_name: tmp_nest_db
+    container_name: tmp_mysql
     image: mysql:8.0
     volumes:
       - nest_data:/var/lib/mysql
