@@ -1,6 +1,18 @@
 version: "3"
 
 services:
+  front:
+    container_name: tmp_next
+    build: ./docker/next
+    volumes:
+      - ./next:/next
+    tty: true
+    ports:
+      - 8080:8080
+    depends_on:
+      - api
+    command: yarn dev
+
   api:
     container_name: tmp_nest
     build: ./docker/nest
