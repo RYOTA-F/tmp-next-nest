@@ -1,5 +1,5 @@
 /**
- * pages/Test
+ * Pages/TestPage
  * @package Pages
  */
 import React, { useState } from 'react'
@@ -8,6 +8,8 @@ import { NextPage } from 'next'
 import { getTests } from '@/api'
 /* components */
 import TestListItem from '@/components/tests/ListItem'
+/* elements */
+import { Container, ListContainer, ApiButton, ClearButton } from './elements'
 /* types */
 import { Test } from '@/types/test'
 
@@ -22,17 +24,24 @@ const TestPage: NextPage = () => {
     setTests(res)
   }
 
+  /**
+   * Clearボタンをクリック
+   */
+  const handleClickClear = () => {
+    setTests([])
+  }
+
   return (
-    <>
-      TestPage
-      <div>
+    <Container>
+      <ListContainer>
         {tests.map((v, i) => (
           <TestListItem key={i} test={v} />
         ))}
+      </ListContainer>
 
-        <button onClick={handleClickApi}>API</button>
-      </div>
-    </>
+      <ApiButton onClick={handleClickApi}>API</ApiButton>
+      <ClearButton onClick={handleClickClear}>Clear</ClearButton>
+    </Container>
   )
 }
 
