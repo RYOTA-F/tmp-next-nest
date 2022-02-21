@@ -6,13 +6,18 @@ import React, { useState } from 'react'
 import { NextPage } from 'next'
 /* api */
 import { getTests } from '@/api'
+/* components */
+import TestListItem from '@/components/tests/ListItem'
 /* types */
 import { Test } from '@/types/test'
 
 const TestPage: NextPage = () => {
   const [tests, setTests] = useState<Test[]>([])
 
-  const handleClickTests = async () => {
+  /**
+   * APIボタンをクリック
+   */
+  const handleClickApi = async () => {
     const res = await getTests()
     setTests(res)
   }
@@ -22,14 +27,10 @@ const TestPage: NextPage = () => {
       TestPage
       <div>
         {tests.map((v, i) => (
-          <div key={i}>
-            <div>ID: {v.id}</div>
-            <div>Name: {v.name}</div>
-            <div>Score: {v.score}</div>
-          </div>
+          <TestListItem key={i} test={v} />
         ))}
 
-        <button onClick={handleClickTests}>API</button>
+        <button onClick={handleClickApi}>API</button>
       </div>
     </>
   )

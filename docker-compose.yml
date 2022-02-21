@@ -38,7 +38,7 @@ services:
       - nest_data:/var/lib/mysql
       - ./db/logs:/var/log/mysql
       - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
-      - ./db:/docker-entrypoint-initdb.d
+      - ./db/init:/docker-entrypoint-initdb.d
     environment:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_USER=${MYSQL_USER}
@@ -47,6 +47,7 @@ services:
       - TZ=${TZ}
     ports:
       - ${MYSQL_DB_PORT}:3306
+    platform: linux/x86_64
 
 volumes:
   nest_data:
