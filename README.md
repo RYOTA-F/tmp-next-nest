@@ -1,12 +1,32 @@
-# TMP Next.js × Next.js
+# TMP Next.js × Next.js × MySQL
 
 ## Setup
 
-- Nest
+1. Build
 
 ```
-$ docker-compose run --rm server yarn install
+$ docker-compose build
 ```
+
+2. Nest install
+
+```
+$ docker-compose run --rm api yarn install
+```
+
+3. Next install
+
+```
+$ docker-compose run --rm front yarn install
+```
+
+## Run
+
+```
+$ docker-compose up -d
+```
+
+## Nest
 
 ### Create API
 
@@ -16,24 +36,4 @@ $ docker-compose run --rm server yarn install
 $ nest g module {module_name}
 $ nest g controller {module_name}
 $ nest g service {module_name}
-```
-
-### Create Table
-
-#### Create Entity
-
-```
-$ npx typeorm entity:create --name Test
-```
-
-#### Create Migration
-
-```
-$ npx typeorm migration:create -n PostRefactoring -d src/migration
-```
-
-#### Migration Run
-
-```
-$ npx typeorm migration:run
 ```

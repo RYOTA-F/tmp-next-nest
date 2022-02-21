@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS tmp_nest_db;
-CREATE DATABASE tmp_nest_db;
+DROP DATABASE IF EXISTS test_db;
+CREATE DATABASE test_db;
 
-USE tmp_nest_db;
+USE test_db;
 
 DROP TABLE IF EXISTS tests;
 

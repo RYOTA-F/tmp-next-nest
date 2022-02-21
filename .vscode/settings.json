@@ -1,4 +1,4 @@
 {
   "eslint.workingDirectories": ["./nest"],
-  "cSpell.words": ["nestjs", "typeorm"]
+  "cSpell.words": ["nestjs", "typeorm", "ormconfig"]
 }
