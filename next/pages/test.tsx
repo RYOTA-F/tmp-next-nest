@@ -5,9 +5,9 @@
 import React, { useState } from 'react'
 import { NextPage } from 'next'
 /* api */
-import { getTests } from './api'
+import { getTests } from '@/api'
 /* types */
-import { Test } from '../types/test'
+import { Test } from '@/types/test'
 
 const TestPage: NextPage = () => {
   const [tests, setTests] = useState<Test[]>([])
