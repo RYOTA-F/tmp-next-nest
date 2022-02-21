@@ -11,6 +11,8 @@ services:
       - 8080:8080
     depends_on:
       - api
+    networks:
+      - tmp_next_nest
     command: yarn dev
 
   api:
@@ -29,6 +31,8 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_DB_PORT: ${MYSQL_DB_PORT}
+    networks:
+      - tmp_next_nest
     command: yarn start:dev
 
   db:
@@ -47,9 +51,11 @@ services:
       - TZ=${TZ}
     ports:
       - ${MYSQL_DB_PORT}:3306
+    networks:
+      - tmp_next_nest
 
 networks:
-  default:
+  tmp_next_nest:
 
 volumes:
   nest_data:
