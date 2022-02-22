@@ -2,33 +2,67 @@
 
 ## Setup
 
-1. Build
+1. Env
+
+   a. Copy .env
+
+   ```
+   $ cp .env_example .env
+   ```
+
+   b. Edit .env
+
+2. Build
 
 ```
 $ docker-compose build
 ```
 
-2. Nest install
+3. Nest install
 
 ```
 $ docker-compose run --rm api yarn install
 ```
 
-3. Next install
+4. Next install
 
 ```
 $ docker-compose run --rm front yarn install
 ```
 
+---
+
 ## Run
+
+### Docker Run
 
 ```
 $ docker-compose up -d
 ```
 
-## Nest
+### Front
 
-### Create API
+```
+localhost:8080/
+```
+
+### Storybook
+
+```
+localhost:6006/
+```
+
+### API
+
+```
+localhost:3000/
+```
+
+---
+
+## Dev
+
+### Nest: Create API
 
 - https://kojimanotech.com/2021/05/23/311/#outline__4
 
