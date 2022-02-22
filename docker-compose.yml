@@ -13,6 +13,18 @@ services:
       - api
     command: yarn dev
 
+  storybook:
+    container_name: tmp_storybook
+    build: ./docker/next
+    volumes:
+      - ./next:/next
+    tty: true
+    ports:
+      - "6006:6006"
+    environment:
+      - NODE_ENV=development
+    command: "yarn storybook:docker"
+
   api:
     container_name: tmp_nest
     build: ./docker/nest
