@@ -2,7 +2,7 @@
 
 ## Setup
 
-1. Env
+1. Env Setting
 
    a. Copy .env
 
@@ -92,10 +92,24 @@ $ docker-compose run --rm api yarn migration:r
 $ docker-compose run --rm api yarn seed:r
 ```
 
-## Nest: Create API
+## Nest: Create Modules
 
 ```
-$ nest g module {module_name}
-$ nest g controller {module_name}
-$ nest g service {module_name}
+$ docker-compose run --rm api yarn nest g module {module_name}
+$ docker-compose run --rm api yarn nest g controller {module_name}
+$ docker-compose run --rm api yarn nest g service {module_name}
+```
+
+## Lint
+
+### Nest: ESLint
+
+```
+$ docker-compose run --rm api yarn lint
+```
+
+### Next: ESLint
+
+```
+$ docker-compose run --rm front yarn lint
 ```

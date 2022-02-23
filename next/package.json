@@ -7,7 +7,8 @@
     "type-check": "tsc",
     "storybook": "start-storybook -p 6006",
     "storybook:docker": "start-storybook -p 6006 --ci --quiet",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint": "npx next lint"
   },
   "dependencies": {
     "axios": "^0.26.0",
@@ -31,6 +32,8 @@
     "@types/styled-components": "^5.1.23",
     "babel-loader": "^8.2.3",
     "babel-plugin-styled-components": "^2.0.3",
+    "eslint": "^8.9.0",
+    "eslint-config-next": "^12.1.0",
     "prettier": "^2.5.1",
     "typescript": "4.0"
   }
