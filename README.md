@@ -36,6 +36,12 @@ $ docker-compose run --rm front yarn install
 $ docker-compose run --rm api yarn migration:r
 ```
 
+6. TypeORM Seed Run
+
+```
+$ docker-compose run --rm api yarn seed:r
+```
+
 ---
 
 ## Run
@@ -78,6 +84,12 @@ $ docker-compose run --rm api yarn migration:g {Model}Migration
 
 ```
 $ docker-compose run --rm api yarn migration:r
+```
+
+### Seed Run
+
+```
+$ docker-compose run --rm api yarn seed:r
 ```
 
 ## Nest: Create API
