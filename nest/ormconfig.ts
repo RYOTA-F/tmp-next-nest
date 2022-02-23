@@ -11,11 +11,12 @@ module.exports = {
   synchronize: false,
   logging: false,
   entities: ['src/entity/**/*.ts'],
-  migrations: ['src/migration/**/*.ts'],
+  migrations: ['src/database/migration/**/*.ts'],
+  seeds: ['src/database/seeders/**/*.ts'],
   subscribers: ['src/subscriber/**/*.ts'],
   cli: {
     entitiesDir: 'src/entity',
-    migrationsDir: 'src/migration',
+    migrationsDir: 'src/database/migration',
     subscribersDir: 'src/subscriber',
   },
 }
