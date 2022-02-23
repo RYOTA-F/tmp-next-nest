@@ -30,6 +30,12 @@ $ docker-compose run --rm api yarn install
 $ docker-compose run --rm front yarn install
 ```
 
+5. TypeORM Migration
+
+```
+$ docker-compose run --rm api yarn migration:r
+```
+
 ---
 
 ## Run
@@ -60,11 +66,21 @@ localhost:3000/
 
 ---
 
-## Dev
+## TypeORM
 
-### Nest: Create API
+### Migration Generate
 
-- https://kojimanotech.com/2021/05/23/311/#outline__4
+```
+$ docker-compose run --rm api yarn migration:g {Model}Migration
+```
+
+### Migration Run
+
+```
+$ docker-compose run --rm api yarn migration:r
+```
+
+## Nest: Create API
 
 ```
 $ nest g module {module_name}
