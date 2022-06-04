@@ -4,17 +4,18 @@
  */
 import React, { useState } from 'react'
 import { NextPage } from 'next'
+import { Button } from '@mantine/core'
+import { useToggle } from '@mantine/hooks'
 /* api */
 import { getTests } from '@/api'
 /* components */
 import TestListItem from '@/components/tests/ListItem'
-/* elements */
-import { Container, ListContainer, ApiButton, ClearButton } from './elements'
 /* types */
 import { Test } from '@/types/test'
 
 const TestPage: NextPage = () => {
   const [tests, setTests] = useState<Test[]>([])
+  const [value, toggle] = useToggle('blue', ['blue', 'orange'])
 
   /**
    * APIボタンをクリック
@@ -32,16 +33,18 @@ const TestPage: NextPage = () => {
   }
 
   return (
-    <Container>
-      <ListContainer>
-        {tests.map((v, i) => (
-          <TestListItem key={i} test={v} />
-        ))}
-      </ListContainer>
-
-      <ApiButton onClick={handleClickApi}>API</ApiButton>
-      <ClearButton onClick={handleClickClear}>Clear</ClearButton>
-    </Container>
+    <>
+      <button onClick={handleClickApi}>click</button>
+      {tests.map((v, i) => (
+        <TestListItem key={i} test={v} />
+      ))}
+      <div>
+        <h1 className="text-3xl  text-blue-900">Hello world!</h1>
+        <Button color={value} onClick={() => toggle()}>
+          {value}
+        </Button>
+      </div>
+    </>
   )
 }
 
