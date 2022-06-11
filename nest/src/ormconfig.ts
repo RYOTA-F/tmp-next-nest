@@ -1,5 +1,5 @@
 import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions'
-import Configuration from '../config/configuration'
+import Configuration from '@config/configuration'
 const configuration = Configuration()
 
 const options: MysqlConnectionOptions = {
