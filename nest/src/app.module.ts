@@ -5,17 +5,9 @@ import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import { TestModule } from './test/test.module'
 import options from './ormconfig'
-import configuration from '../config/configuration'
 
 @Module({
-  imports: [
-    TypeOrmModule.forRoot(options),
-    ConfigModule.forRoot({
-      isGlobal: true,
-      load: [configuration],
-    }),
-    TestModule,
-  ],
+  imports: [TypeOrmModule.forRoot(options), TestModule],
   controllers: [AppController],
   providers: [AppService],
 })
