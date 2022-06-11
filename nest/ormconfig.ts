@@ -1,7 +1,7 @@
 import Configuration from './config/configuration'
 const configuration = Configuration()
 
-module.exports = {
+const config = {
   type: 'mysql',
   host: 'db',
   port: configuration.database.port,
@@ -20,3 +20,5 @@ module.exports = {
     subscribersDir: 'src/subscriber',
   },
 }
+
+export default config
