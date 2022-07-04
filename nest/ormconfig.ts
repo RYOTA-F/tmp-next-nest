@@ -1,24 +1,21 @@
-import Configuration from './config/configuration'
-const configuration = Configuration()
+import { DB_CONFIG } from './config/dbconfig'
 
-const config = {
-  type: 'mysql',
-  host: 'db',
-  port: configuration.database.port,
-  username: configuration.database.user,
-  password: configuration.database.pass,
-  database: configuration.database.name,
+const ormconfig = {
+  type: DB_CONFIG.type,
+  host: DB_CONFIG.host,
+  port: DB_CONFIG.port,
+  username: DB_CONFIG.user,
+  password: DB_CONFIG.pass,
+  database: DB_CONFIG.name,
   synchronize: false,
   logging: false,
   entities: ['src/entity/**/*.ts'],
   migrations: ['src/database/migration/**/*.ts'],
   seeds: ['src/database/seeders/**/*.ts'],
-  subscribers: ['src/subscriber/**/*.ts'],
   cli: {
     entitiesDir: 'src/entity',
     migrationsDir: 'src/database/migration',
-    subscribersDir: 'src/subscriber',
   },
 }
 
-export default config
+export default ormconfig

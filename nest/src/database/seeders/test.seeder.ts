@@ -1,7 +1,7 @@
 import { Connection } from 'typeorm'
 import { Factory, Seeder, useRefreshDatabase } from 'typeorm-seeding'
-import { Tests } from '@entity/test.entity'
-import { tests } from '@seeds/test.seed'
+import { Tests } from '../../entity/test.entity'
+import { tests } from '../seeds/test.seed'
 
 export class CreateTest implements Seeder {
   public async run(_: Factory, connection: Connection): Promise<void> {
