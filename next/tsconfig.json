@@ -15,9 +15,19 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
-      "@/*": ["*"],
-      "@/api": ["pages/api/"],
-      "@/api/*": ["pages/api/*"]
+      "@*": ["*"],
+      "@api": ["pages/api/"],
+      "@api/*": ["pages/api/*"],
+      "@components": ["components/"],
+      "@components/*": ["components/*"],
+      "@constants": ["constants/"],
+      "@constants/*": ["constants/*"],
+      "@type": ["type"],
+      "@type/*": ["type/*"],
+      "@utils": ["utils"],
+      "@utils/*": ["utils/*"],
+      "@hooks": ["utils/hooks"],
+      "@hooks/*": ["utils/hooks/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

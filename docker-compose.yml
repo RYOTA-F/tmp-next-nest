@@ -46,7 +46,7 @@ services:
     container_name: tmp_mysql
     image: mysql:8.0
     volumes:
-      - nest_data:/var/lib/mysql
+      - tmp_next_nest:/var/lib/mysql
       - ./db/logs:/var/log/mysql
       - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
     environment:
@@ -60,4 +60,4 @@ services:
     platform: linux/x86_64
 
 volumes:
-  nest_data:
+  tmp_next_nest:

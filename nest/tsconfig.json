@@ -22,9 +22,7 @@
       "@config": ["config"],
       "@config/*": ["config/*"],
       "@entity": ["src/entity"],
-      "@entity/*": ["src/entity/*"],
-      "@seeds": ["src/database/seeds"],
-      "@seeds/*": ["src/database/seeds/*"]
+      "@entity/*": ["src/entity/*"]
     }
   }
 }
